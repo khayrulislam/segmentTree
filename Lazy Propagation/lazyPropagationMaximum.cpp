@@ -33,10 +33,10 @@ void update(int nodeNumber, int start, int end, int l, int r, int value){
 
     int mid,left,right;
     if(lazy[nodeNumber]!=0){
-        treeNode[nodeNumber] += value;
+        treeNode[nodeNumber] += lazy[nodeNumber];
         if(start!=end){
-            lazy[nodeNumber*2] += value;
-            lazy[nodeNumber*2 + 1] += value;
+            lazy[nodeNumber*2] += lazy[nodeNumber];
+            lazy[nodeNumber*2 + 1] += lazy[nodeNumber];
         }
         lazy[nodeNumber] = 0;
     }

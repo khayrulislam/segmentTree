@@ -34,11 +34,11 @@ void update(int nodeNumber, int start, int end, int l, int r, int value){
 
     int mid,left,right;
     if(lazy[nodeNumber]!=0){
-        treeNode[nodeNumber] += (end-start+1)*value;
+        treeNode[nodeNumber] += (end-start+1)*lazy[nodeNumber];
         //treeNode[nodeNumber] += value;   // for finding min and max
         if(start!=end){
-            lazy[nodeNumber*2] += value;
-            lazy[nodeNumber*2 + 1] += value;
+            lazy[nodeNumber*2] += lazy[nodeNumber];
+            lazy[nodeNumber*2 + 1] += lazy[nodeNumber];
         }
         lazy[nodeNumber] = 0;
     }
